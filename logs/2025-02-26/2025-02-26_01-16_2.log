@@ -1,0 +1,9 @@
+01:16:09.832 [main] disableAnsi=trueINFO  by.mashnyuk.service.CarService - Car added: Honda Civic
+01:16:09.864 [main] disableAnsi=trueINFO  by.mashnyuk.service.CarService - Car added: Honda Accord
+01:16:09.865 [main] disableAnsi=trueINFO  by.mashnyuk.service.CarService - Retrieving cars by model: Civic older than 5 years
+01:16:09.865 [main] disableAnsi=trueINFO  by.mashnyuk.service.CarService - Found 1 cars for model: Civic older than 5 years
+01:16:09.866 [main] disableAnsi=trueINFO  by.mashnyuk.service.CarServiceTest - Found car older than 5 years: Civic
+01:16:09.871 [main] disableAnsi=trueINFO  by.mashnyuk.service.CarServiceTest - Testing getting cars from year with price greater than specified
+01:16:09.872 [main] disableAnsi=trueINFO  by.mashnyuk.service.CarService - Car added: Ford Focus
+01:16:09.873 [main] disableAnsi=trueINFO  by.mashnyuk.service.CarService - Car added: Ford Mustang
+01:16:09.873 [main] disableAnsi=trueINFO  by.mashnyuk.service.CarService - Retrieving cars from year: 2021 with price greater than 25000.0

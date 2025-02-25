@@ -1,0 +1,10 @@
+01:03:13.669 [main] INFO  by.mashnyuk.service.CarService - Car added: Toyota Corolla
+01:03:13.699 [main] INFO  by.mashnyuk.service.CarService - Retrieving cars by brand: Toyota
+01:03:13.701 [main] INFO  by.mashnyuk.service.CarService - Found 2 cars for brand: Toyota
+01:03:13.702 [main] INFO  by.mashnyuk.service.CarServiceTest - Test passed: getCarsByBrand
+01:16:09.807 [main] disableAnsi=trueINFO  by.mashnyuk.service.CarService - Car added: Toyota Camry
+01:16:09.819 [main] disableAnsi=trueINFO  by.mashnyuk.service.CarService - Car added: Toyota Corolla
+01:16:09.820 [main] disableAnsi=trueINFO  by.mashnyuk.service.CarService - Retrieving cars by brand: Toyota
+01:16:09.821 [main] disableAnsi=trueINFO  by.mashnyuk.service.CarService - Found 2 cars for brand: Toyota
+01:16:09.824 [main] disableAnsi=trueINFO  by.mashnyuk.service.CarServiceTest - Test passed: getCarsByBrand
+01:16:09.831 [main] disableAnsi=trueINFO  by.mashnyuk.service.CarServiceTest - Testing getting cars by model older than specified years

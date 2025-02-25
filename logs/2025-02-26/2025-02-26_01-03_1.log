@@ -1,0 +1,11 @@
+01:03:13.603 [main] INFO  by.mashnyuk.service.CarService - Car added: Ford Focus
+01:03:13.622 [main] INFO  by.mashnyuk.service.CarService - Car added: Ford Mustang
+01:03:13.622 [main] INFO  by.mashnyuk.service.CarService - Retrieving cars from year: 2021 with price greater than 25000.0
+01:03:13.623 [main] INFO  by.mashnyuk.service.CarService - Found 1 cars from year: 2021 with price greater than 25000.0
+01:03:13.627 [main] INFO  by.mashnyuk.service.CarServiceTest - Test passed: getCarsByYearGreaterThanPrice
+01:03:13.658 [main] INFO  by.mashnyuk.service.CarService - Car added: Honda Civic
+01:03:13.659 [main] INFO  by.mashnyuk.service.CarService - Car added: Honda Accord
+01:03:13.659 [main] INFO  by.mashnyuk.service.CarService - Retrieving cars by model: Civic older than 5 years
+01:03:13.660 [main] INFO  by.mashnyuk.service.CarService - Found 1 cars for model: Civic older than 5 years
+01:03:13.660 [main] INFO  by.mashnyuk.service.CarServiceTest - Test passed: getCarsByModelOlderThan
+01:03:13.669 [main] INFO  by.mashnyuk.service.CarService - Car added: Toyota Camry

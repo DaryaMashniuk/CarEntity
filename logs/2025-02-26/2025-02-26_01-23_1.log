@@ -1,0 +1,9 @@
+01:16:09.874 [main] disableAnsi=trueINFO  by.mashnyuk.service.CarService - Found 1 cars from year: 2021 with price greater than 25000.0
+01:16:09.889 [main] disableAnsi=trueINFO  by.mashnyuk.service.CarServiceTest - Found car with price greater than 25000: Mustang
+01:16:09.891 [main] disableAnsi=trueINFO  by.mashnyuk.service.CarServiceTest - Testing getting cars by brand when no cars are present
+01:16:09.892 [main] disableAnsi=trueINFO  by.mashnyuk.service.CarService - Retrieving cars by brand: Honda
+01:16:09.894 [main] disableAnsi=trueINFO  by.mashnyuk.service.CarService - Found 2 cars for brand: Honda
+01:16:09.907 [main] disableAnsi=trueINFO  by.mashnyuk.service.CarServiceTest - Testing adding a valid car to CarService
+01:16:09.908 [main] disableAnsi=trueINFO  by.mashnyuk.service.CarService - Car added: Toyota Camry
+01:16:09.908 [main] disableAnsi=trueINFO  by.mashnyuk.service.CarService - Retrieving cars by brand: Toyota
+01:16:09.909 [main] disableAnsi=trueINFO  by.mashnyuk.service.CarService - Found 3 cars for brand: Toyota

@@ -1,0 +1,11 @@
+01:23:57.489 [main] INFO  by.mashnyuk.service.CarService - Car added: Toyota Camry
+01:23:57.664 [main] INFO  by.mashnyuk.service.CarService - Car added: Toyota Corolla
+01:23:57.665 [main] INFO  by.mashnyuk.service.CarService - Retrieving cars by brand: Toyota
+01:23:57.673 [main] INFO  by.mashnyuk.service.CarService - Found 2 cars for brand: Toyota
+01:23:57.675 [main] INFO  by.mashnyuk.service.CarServiceTest - Test passed: getCarsByBrand
+01:23:57.699 [main] INFO  by.mashnyuk.service.CarServiceTest - Testing getting cars by model older than specified years
+01:23:57.700 [main] INFO  by.mashnyuk.service.CarService - Car added: Honda Civic
+01:23:57.701 [main] INFO  by.mashnyuk.service.CarService - Car added: Honda Accord
+01:23:57.702 [main] INFO  by.mashnyuk.service.CarService - Retrieving cars by model: Civic older than 5 years
+01:23:57.702 [main] INFO  by.mashnyuk.service.CarService - Found 1 cars for model: Civic older than 5 years
+01:23:57.705 [main] INFO  by.mashnyuk.service.CarServiceTest - Found car older than 5 years: Civic

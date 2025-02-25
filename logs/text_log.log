@@ -1,0 +1,5 @@
+01:23:57.765 [main] INFO  by.mashnyuk.service.CarServiceTest - Testing adding a valid car to CarService
+01:23:57.807 [main] INFO  by.mashnyuk.service.CarService - Car added: Toyota Camry
+01:23:57.808 [main] INFO  by.mashnyuk.service.CarService - Retrieving cars by brand: Toyota
+01:23:57.808 [main] INFO  by.mashnyuk.service.CarService - Found 1 cars for brand: Toyota
+01:23:57.809 [main] INFO  by.mashnyuk.service.CarServiceTest - Successfully added car: Toyota Camry
