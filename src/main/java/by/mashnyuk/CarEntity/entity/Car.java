@@ -1,4 +1,4 @@
-package by.mashnyuk.entity;
+package by.mashnyuk.CarEntity.entity;
 
 import java.util.Objects;
 

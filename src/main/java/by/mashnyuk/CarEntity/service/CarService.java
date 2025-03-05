@@ -1,6 +1,6 @@
-package by.mashnyuk.service;
+package by.mashnyuk.CarEntity.service;
 
-import by.mashnyuk.entity.Car;
+import by.mashnyuk.CarEntity.entity.Car;
 
 import java.util.List;
 

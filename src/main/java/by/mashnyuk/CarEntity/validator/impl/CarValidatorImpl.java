@@ -1,6 +1,6 @@
-package by.mashnyuk.validator.impl;
-import by.mashnyuk.entity.Car;
-import by.mashnyuk.validator.CarValidator;
+package by.mashnyuk.CarEntity.validator.impl;
+import by.mashnyuk.CarEntity.entity.Car;
+import by.mashnyuk.CarEntity.validator.CarValidator;
 
 import java.util.Calendar;
 import java.util.regex.Pattern;

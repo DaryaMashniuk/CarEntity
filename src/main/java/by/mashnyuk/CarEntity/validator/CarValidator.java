@@ -1,6 +1,6 @@
-package by.mashnyuk.validator;
+package by.mashnyuk.CarEntity.validator;
 
-import by.mashnyuk.entity.Car;
+import by.mashnyuk.CarEntity.entity.Car;
 
 public interface CarValidator {
 

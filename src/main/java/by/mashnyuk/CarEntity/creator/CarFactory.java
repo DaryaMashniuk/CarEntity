@@ -1,7 +1,7 @@
-package by.mashnyuk.creator;
+package by.mashnyuk.CarEntity.creator;
 
-import by.mashnyuk.entity.Car;
-import by.mashnyuk.validator.impl.CarValidatorImpl;
+import by.mashnyuk.CarEntity.entity.Car;
+import by.mashnyuk.CarEntity.validator.impl.CarValidatorImpl;
 
 import java.util.Optional;
 

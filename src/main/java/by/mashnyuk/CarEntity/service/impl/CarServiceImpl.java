@@ -1,8 +1,8 @@
-package by.mashnyuk.service.impl;
+package by.mashnyuk.CarEntity.service.impl;
 
-import by.mashnyuk.entity.Car;
-import by.mashnyuk.entity.CarGarage;
-import by.mashnyuk.service.CarService;
+import by.mashnyuk.CarEntity.entity.Car;
+import by.mashnyuk.CarEntity.entity.CarGarage;
+import by.mashnyuk.CarEntity.service.CarService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
