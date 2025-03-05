@@ -2,28 +2,35 @@ package by.mashnyuk.service;
 
 import by.mashnyuk.creator.CarFactory;
 import by.mashnyuk.entity.Car;
-import by.mashnyuk.util.CarGarage;
+import by.mashnyuk.entity.CarGarage;
+import by.mashnyuk.service.impl.CarServiceImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.testng.Assert.*;
 
-public class CarServiceTest {
-    private static final Logger logger = LogManager.getLogger(CarServiceTest.class);
-    private CarService carService;
+public class CarServiceImplTest {
+    private static final Logger logger = LogManager.getLogger(CarServiceImplTest.class);
+    private CarServiceImpl carServiceImpl;
     private CarGarage carGarage;
     private SoftAssert softAssert;
+
+    @BeforeClass
+    public void initialSetUp() {
+        carServiceImpl = new CarServiceImpl(carGarage);
+        softAssert = new SoftAssert();
+    }
 
     @BeforeMethod
     public void setUp() {
         carGarage = new CarGarage();
-        carService = new CarService(carGarage);
-        softAssert = new SoftAssert();
     }
 
     @Test
@@ -33,7 +40,7 @@ public class CarServiceTest {
         Car car = new Car(1, "Toyota", "Camry", 2020, "Red", 30000, "XYZ123");
         carGarage.addCar(car);
 
-        List<Car> cars = carService.getCarsByBrand("Toyota");
+        List<Car> cars = carServiceImpl.findCarsByBrand("Toyota");
         softAssert.assertEquals(cars.size(), 1);
         softAssert.assertEquals(cars.get(0).getModel(), "Camry");
         softAssert.assertAll();
@@ -44,7 +51,7 @@ public class CarServiceTest {
     public void givenNoCars_whenGetCarsByBrand_thenReturnsEmptyList() {
         logger.info("Testing getting cars by brand when no cars are present");
 
-        List<Car> cars = carService.getCarsByBrand("BMW");
+        List<Car> cars = carServiceImpl.findCarsByBrand("BMW");
         assertTrue(cars.isEmpty(), "Expected empty list for non-existent brand");
         logger.info("No cars found for brand: BMW");
     }
@@ -58,7 +65,7 @@ public class CarServiceTest {
         carGarage.addCar(car1);
         carGarage.addCar(car2);
 
-        List<Car> result = carService.getCarsByModelOlderThan("Civic", 5);
+        List<Car> result = carServiceImpl.findCarsByModelOlderThan("Civic", 5);
         softAssert.assertEquals(result.size(), 1);
         softAssert.assertEquals(result.get(0).getModel(), "Civic");
         softAssert.assertAll();
@@ -74,7 +81,7 @@ public class CarServiceTest {
         carGarage.addCar(car1);
         carGarage.addCar(car2);
 
-        List<Car> result = carService.getCarsByYearGreaterThanPrice(2021, 25000);
+        List<Car> result = carServiceImpl.findCarsByYearGreaterThanPrice(2021, 25000);
         softAssert.assertEquals(result.size(), 1);
         softAssert.assertEquals(result.get(0).getModel(), "Mustang");
         softAssert.assertAll();
@@ -83,12 +90,12 @@ public class CarServiceTest {
 
     @Test
     public void givenCars_whenGetCarsByBrand_thenReturnsCorrectCars() {
-        Car car1 = CarFactory.createCar(1, "Toyota", "Camry", 2020, "Red", 30000, "XYZ123");
-        Car car2 = CarFactory.createCar(2, "Toyota", "Corolla", 2018, "Blue", 20000, "ABC456");
-        carGarage.addCar(car1);
-        carGarage.addCar(car2);
+        Optional<Car> car1 = CarFactory.createCar(1, "Toyota", "Camry", 2020, "Red", 30000, "XYZ123");
+        car1.ifPresent(car -> carGarage.addCar(car));
+        Optional<Car> car2 = CarFactory.createCar(2, "Toyota", "Corolla", 2018, "Blue", 20000, "ABC456");
+        car2.ifPresent(car -> carGarage.addCar(car));
 
-        List<Car> result = carService.getCarsByBrand("Toyota");
+        List<Car> result = carServiceImpl.findCarsByBrand("Toyota");
 
         softAssert.assertEquals(result.size(), 2);
         softAssert.assertEquals(result.get(0).getModel(), "Camry");

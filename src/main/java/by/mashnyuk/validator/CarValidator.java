@@ -1,64 +1,14 @@
 package by.mashnyuk.validator;
+
 import by.mashnyuk.entity.Car;
 
-import javax.xml.validation.Validator;
-import java.util.Calendar;
-import java.util.regex.Pattern;
+public interface CarValidator {
 
-public class CarValidator implements CarValidatorInterface {
-
-    private static final String BRAND_REGEX = "^[A-Za-z0-9 ]+$";
-    private static final Pattern BRAND_PATTERN = Pattern.compile(BRAND_REGEX);
-    public static final int FIRST_CAR_INVENTED = 1885;
-
-
-    public static boolean isValid(Car car) {
-        CarValidator validator = new CarValidator();
-        return validator.validate(car);
-    }
-
-    @Override
-    public boolean validate(Car car) {
-        if (car == null) {
-            return false;
-        }
-
-        return validateBrand(car.getBrand()) &&
-                validateModel(car.getModel()) &&
-                validateColor(car.getColor()) &&
-                validateYear(car.getYear()) &&
-                validateRegistrationNumber(car.getRegistrationNumber()) &&
-                validatePrice(car.getPrice());
-    }
-
-    @Override
-    public boolean validateBrand(String brand) {
-        return brand != null && !brand.isBlank() && BRAND_PATTERN.matcher(brand).matches();
-    }
-
-    @Override
-    public boolean validateModel(String model) {
-        return model != null && !model.isBlank();
-    }
-
-    @Override
-    public boolean validateColor(String color) {
-        return color != null && !color.isBlank();
-    }
-
-    @Override
-    public boolean validateRegistrationNumber(String registrationNumber) {
-        return registrationNumber != null && !registrationNumber.trim().isEmpty();
-    }
-
-    @Override
-    public boolean validateYear(int year) {
-        int currentYear = Calendar.getInstance().get(Calendar.YEAR);
-        return year >= FIRST_CAR_INVENTED && year <= currentYear;
-    }
-
-    @Override
-    public boolean validatePrice(double price) {
-        return price >= 0;
-    }
+    boolean validate(Car car);
+    boolean validateBrand(String brand);
+    boolean validateModel(String model);
+    boolean validateColor(String color);
+    boolean validateRegistrationNumber(String registrationNumber);
+    boolean validateYear(int year);
+    boolean validatePrice(double price);
 }
