@@ -7,6 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import java.util.List;
 
@@ -16,11 +17,13 @@ public class CarServiceTest {
     private static final Logger logger = LogManager.getLogger(CarServiceTest.class);
     private CarService carService;
     private CarGarage carGarage;
+    private SoftAssert softAssert;
 
     @BeforeMethod
     public void setUp() {
         carGarage = new CarGarage();
         carService = new CarService(carGarage);
+        softAssert = new SoftAssert();
     }
 
     @Test
@@ -31,8 +34,9 @@ public class CarServiceTest {
         carGarage.addCar(car);
 
         List<Car> cars = carService.getCarsByBrand("Toyota");
-        assertEquals(cars.size(), 1);
-        assertEquals(cars.get(0).getModel(), "Camry");
+        softAssert.assertEquals(cars.size(), 1);
+        softAssert.assertEquals(cars.get(0).getModel(), "Camry");
+        softAssert.assertAll();
         logger.info("Successfully added car: {} {}", car.getBrand(), car.getModel());
     }
 
@@ -55,8 +59,9 @@ public class CarServiceTest {
         carGarage.addCar(car2);
 
         List<Car> result = carService.getCarsByModelOlderThan("Civic", 5);
-        assertEquals(result.size(), 1);
-        assertEquals(result.get(0).getModel(), "Civic");
+        softAssert.assertEquals(result.size(), 1);
+        softAssert.assertEquals(result.get(0).getModel(), "Civic");
+        softAssert.assertAll();
         logger.info("Found car older than 5 years: {}", result.get(0).getModel());
     }
 
@@ -70,8 +75,9 @@ public class CarServiceTest {
         carGarage.addCar(car2);
 
         List<Car> result = carService.getCarsByYearGreaterThanPrice(2021, 25000);
-        assertEquals(result.size(), 1);
-        assertEquals(result.get(0).getModel(), "Mustang");
+        softAssert.assertEquals(result.size(), 1);
+        softAssert.assertEquals(result.get(0).getModel(), "Mustang");
+        softAssert.assertAll();
         logger.info("Found car with price greater than 25000: {}", result.get(0).getModel());
     }
 
@@ -84,9 +90,10 @@ public class CarServiceTest {
 
         List<Car> result = carService.getCarsByBrand("Toyota");
 
-        assertEquals(result.size(), 2);
-        assertEquals(result.get(0).getModel(), "Camry");
-        assertEquals(result.get(1).getModel(), "Corolla");
+        softAssert.assertEquals(result.size(), 2);
+        softAssert.assertEquals(result.get(0).getModel(), "Camry");
+        softAssert.assertEquals(result.get(1).getModel(), "Corolla");
+        softAssert.assertAll();
         logger.info("Test passed: getCarsByBrand");
     }
 }
